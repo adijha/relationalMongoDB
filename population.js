@@ -49,6 +49,6 @@ async function listCourses() {
 
 // createAuthor('Mosh', 'My bio', 'My Website');
 
-createCourse('Node Course', 'authorId')
+// createCourse('Node Course', 'authorId')
 
-// listCourses();
+listCourses();
