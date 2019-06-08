@@ -44,7 +44,7 @@ async function listCourses() {
   const courses = await Course
     .find()
     .populate('author','name -_id')
-.populate('category','name')
+    .populate('category','name')
     .select('name author'); 
   console.log(courses);
 }
