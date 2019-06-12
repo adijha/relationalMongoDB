@@ -32,12 +32,10 @@ async function listCourses() {
   console.log(courses);
 }
 
+async function addAuthor(courseId, author){
+  const course = await Course.findById(courseId);
+  course.authors.push(author);
+  course.save();
+}
 
-
-
-createCourse('Node Course', [
-  new Author({ name: 'Mosh' }),
-  new Author({ name: 'Brad' }),
-]);
-
-// updateAuthor('5cfd9a26f623e031a8d1fba8');
+addAuthor('5cff7bcfb44a192004e27bca', new Author({name: 'Angela'}))
