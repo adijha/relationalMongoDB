@@ -32,10 +32,17 @@ async function listCourses() {
   console.log(courses);
 }
 
-async function addAuthor(courseId, author){
+// async function addAuthor(courseId, author){
+//   const course = await Course.findById(courseId);
+//   course.authors.push(author);
+//   course.save();
+// }
+
+async function removeAuthor(courseId,authorId){
   const course = await Course.findById(courseId);
-  course.authors.push(author);
+  const author = course.authors.id(authorId);
+  author.remove();
   course.save();
 }
 
-addAuthor('5cff7bcfb44a192004e27bca', new Author({name: 'Angela'}))
+removeAuthor('5cff7bcfb44a192004e27bca','5cff7f786038d52468b7d534')
